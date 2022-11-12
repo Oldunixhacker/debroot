@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo -v || exit 1
+export DEBROOTNAME="$(dialog --backtitle "Debroot" --ascii-lines --inputbox "Debroots are located in $HOME/Debroots. Give your Debroot a name:" 10 70 $RANDOM$RANDOM-MyDebroot)"
+sudo apt-get install -y debootstrap
+debootstrap stable
